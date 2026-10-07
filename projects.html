@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects – Krishna Rani</title>
+  <meta name="description" content="Projects by Krishna Rani: federated learning with LIME, RNA-to-protein prediction with scGPT, local RAG and more.">
+  <meta name="author" content="Krishna Rani">
+  <link rel="canonical" href="https://krishna-rani-t.github.io/projects.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects – Krishna Rani">
+  <meta property="og:description" content="Projects by Krishna Rani: federated learning with LIME, RNA-to-protein prediction with scGPT, local RAG and more.">
+  <meta property="og:url" content="https://krishna-rani-t.github.io/projects.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/young-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/atkinson-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">Krishna Rani</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>Projects</h1>
+        <p>University and personal projects in machine learning, explainability and retrieval.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <ul class="work-list">
+          <li class="work-item" id="fedlime">
+            <div>
+              <h3>FedLIME: federated learning with LIME</h3>
+              <p class="meta">University project</p>
+            </div>
+            <div>
+              <p>Federated learning keeps data on each client, but that makes it hard to explain what the shared model learned. FedLIME produces explanations without moving raw data or detailed explanations off the clients.</p>
+              <ul>
+                <li>Trains a shared neural network with <a href="https://flower.ai/" target="_blank" rel="noopener">Flower</a> (FedAvg) across 3–10 simulated clients, using random and demographic-based data splits.</li>
+                <li>Generates LIME explanations locally on each client and shares only summaries protected with Gaussian local differential privacy.</li>
+                <li>Evaluated on Adult Income, Bank Marketing and Law School. Federated explanations reached up to 0.96 similarity to the centralised baseline and matched or exceeded its fidelity (up to 0.53 vs. 0.30 R²).</li>
+              </ul>
+              <p class="tags">Python, Flower, LIME, differential privacy</p>
+              <ul class="links"><li><a href="https://github.com/Krishna-Rani-t/Explainable_Federated_Learning" target="_blank" rel="noopener">GitHub</a></li></ul>
+            </div>
+          </li>
+          <li class="work-item" id="rna-protein">
+            <div>
+              <h3>RNA-to-protein prediction</h3>
+              <p class="meta">AI in biomedicine, university project</p>
+            </div>
+            <div>
+              <p>Predicts protein expression from single-cell RNA data, using the <a href="https://www.kaggle.com/competitions/open-problems-multimodal" target="_blank" rel="noopener">Kaggle Open Problems – Multimodal Single-Cell Integration</a> dataset.</p>
+              <ul>
+                <li>Trained and compared Ridge Regression, Random Forest, a fully connected neural network and an autoencoder as baselines.</li>
+                <li>Built a prediction pipeline on the pretrained <a href="https://github.com/bowang-lab/scGPT" target="_blank" rel="noopener">scGPT</a> single-cell foundation model, adding a neural network head to predict protein levels.</li>
+              </ul>
+              <p class="tags">Python, PyTorch, scGPT, single-cell multiomics</p>
+              <ul class="links"><li><a href="https://github.com/Krishna-Rani-t/Ai_in_biomedicine_project" target="_blank" rel="noopener">GitHub</a></li></ul>
+            </div>
+          </li>
+          <li class="work-item" id="rag">
+            <div>
+              <h3>Retrieval-augmented generation with local models</h3>
+              <p class="meta">Personal project</p>
+            </div>
+            <div>
+              <p>A small RAG chatbot that runs entirely on local models through Ollama. It embeds a document collection with BGE, retrieves the closest chunks by cosine similarity, and answers with Llama 3.2 1B Instruct using only the retrieved context, streaming the response.</p>
+              <p class="tags">Python, Ollama, BGE embeddings, Llama 3.2</p>
+              <ul class="links"><li><a href="https://github.com/Krishna-Rani-t/Retrieval-Augmented-Generation" target="_blank" rel="noopener">GitHub</a></li></ul>
+            </div>
+          </li>
+          <li class="work-item" id="bayes">
+            <div>
+              <h3>Bayesian network inference</h3>
+              <p class="meta">AI course assignment</p>
+            </div>
+            <div>
+              <p>Representing Bayesian networks and running exact and approximate inference over them, based on the Berkeley CS188 project structure.</p>
+              <p class="tags">Python, probabilistic reasoning</p>
+              <ul class="links"><li><a href="https://github.com/Krishna-Rani-t/AI2_project1" target="_blank" rel="noopener">GitHub</a></li></ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Krishna Rani</p>
+      <ul>
+        <li><a href="mailto:thakurkrishnarani@gmail.com">Email</a></li>
+        <li><a href="https://github.com/Krishna-Rani-t" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/krishna-rani-thakur-5b77b9150" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

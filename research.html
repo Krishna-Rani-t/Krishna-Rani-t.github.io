@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research – Krishna Rani</title>
+  <meta name="description" content="Krishna Rani's research: HighSchoolBench, a multimodal LLM benchmark of high-school exam questions, and ontology learning software at TIB Hannover.">
+  <meta name="author" content="Krishna Rani">
+  <link rel="canonical" href="https://krishna-rani-t.github.io/research.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Research – Krishna Rani">
+  <meta property="og:description" content="Krishna Rani's research: HighSchoolBench, a multimodal LLM benchmark of high-school exam questions, and ontology learning software at TIB Hannover.">
+  <meta property="og:url" content="https://krishna-rani-t.github.io/research.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/young-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/atkinson-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">Krishna Rani</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html" aria-current="page">Research</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>Research</h1>
+        <p>LLM evaluation, ontology learning, and the data work behind both.</p>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="thesis">
+      <div class="wrap split">
+        <h2 id="thesis">Master’s thesis</h2>
+        <div>
+          <article class="feature">
+            <h3>Toward Robust LLM Benchmarking in High School Science Education: Constructing a QA Corpus from Standardized Tests</h3>
+            <p class="meta">Leibniz Universität Hannover, March–September 2026. Advisors: Dr. Jennifer D’Souza and Prof. Dr. Sören Auer.</p>
+            <div class="prose">
+              <p>General-purpose benchmarks say little about how reliable a model is at a specific school level. The thesis introduces <strong>HighSchoolBench</strong>, a multimodal benchmark of 10,501 authentic questions from 25 assessments and competitions covering Grades 9–12 across 11 subjects. 28.1% of the questions are open-ended and 27.6% need an image to answer.</p>
+              <h3>What I built</h3>
+              <ul>
+                <li>A reusable PDF-to-JSON pipeline that combines OCR (Chandra, DeepSeek-OCR), source-specific preprocessing, extraction with Qwen3-32B, automated checks and human validation.</li>
+                <li>The benchmark itself: structured JSON records with linked images and tables, ready for automated evaluation.</li>
+                <li>An evaluation tool that ran 22 instruction-tuned and reasoning models, including Qwen, Mistral, DeepSeek and GPT-OSS, on 8,393 test questions in zero-shot and few-shot settings, through OpenAI-compatible APIs on SLURM-scheduled H100 and L40S GPUs.</li>
+              </ul>
+              <h3>What I found</h3>
+              <ul>
+                <li>Reasoning models performed best on multiple-choice questions.</li>
+                <li>Open-ended questions, image-dependent questions and worked solutions remained challenging.</li>
+                <li>Few-shot prompting gave inconsistent improvements.</li>
+                <li>Strong multiple-choice scores alone are not enough to judge whether a model is reliable for high-school education.</li>
+              </ul>
+            </div>
+            <ul class="links">
+              <li><a href="https://doi.org/10.15488/22429" target="_blank" rel="noopener">DOI: 10.15488/22429</a></li>
+              <li><a href="https://repo.uni-hannover.de/bitstreams/9f4b99eb-09c4-4540-92b8-befd7dff0104/download" target="_blank" rel="noopener">Download PDF (11.7 MB)</a></li>
+            </ul>
+            <div class="cite">
+              <div class="cite-head">
+                <h3 id="bibtex-label">Cite this thesis</h3>
+                <button class="copy-btn" type="button" data-copy="bibtex">Copy BibTeX</button>
+              </div>
+              <pre id="bibtex" aria-labelledby="bibtex-label">@mastersthesis{rani2026highschoolbench,
+  author  = {Rani, Krishna},
+  title   = {Toward Robust LLM Benchmarking in High School Science
+             Education: Constructing a QA Corpus from Standardized Tests},
+  school  = {Gottfried Wilhelm Leibniz Universit{\"a}t Hannover},
+  year    = {2026},
+  doi     = {10.15488/22429}
+}</pre>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="software">
+      <div class="wrap split">
+        <h2 id="software">Research software</h2>
+        <div class="prose">
+          <p>Since December 2024 I’ve worked as a student assistant in the SciKnowOrg group at TIB, which builds AI systems that turn scientific literature into machine-actionable knowledge. My part is keeping two of the group’s open-source Python libraries in good shape.</p>
+          <h3><a href="https://github.com/sciknoworg/OntoLearner" target="_blank" rel="noopener">OntoLearner</a></h3>
+          <p>A modular library for ontology learning with LLMs. I integrated the top four solutions from the LLMs4OL Challenge at ISWC as 11 reusable learner models across term typing, taxonomy discovery and Text2Onto. The original code was written for specific challenge datasets; I generalised it so each learner works with any ontology in the library.</p>
+          <ul class="links">
+            <li><a href="https://github.com/sciknoworg/OntoLearner" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://ontolearner.readthedocs.io/" target="_blank" rel="noopener">Documentation</a></li>
+            <li><a href="https://pypi.org/project/OntoLearner/" target="_blank" rel="noopener">PyPI</a></li>
+          </ul>
+          <h3><a href="https://github.com/sciknoworg/OntoAligner" target="_blank" rel="noopener">OntoAligner</a></h3>
+          <p>A library for ontology alignment and matching. I help maintain the codebase and improve existing modules.</p>
+          <ul class="links">
+            <li><a href="https://github.com/sciknoworg/OntoAligner" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="data">
+      <div class="wrap split">
+        <h2 id="data">Datasets</h2>
+        <div class="prose">
+          <h3 style="margin-top:0">Virology and epidemiology papers</h3>
+          <p>A compilation of PubMed paper metadata in virology and epidemiology, processed with Python and Jupyter notebooks into a dataset for biomedical literature mining.</p>
+          <ul class="links">
+            <li><a href="https://github.com/jd-coderepos/virology-ai-papers" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Krishna Rani</p>
+      <ul>
+        <li><a href="mailto:thakurkrishnarani@gmail.com">Email</a></li>
+        <li><a href="https://github.com/Krishna-Rani-t" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/krishna-rani-thakur-5b77b9150" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
